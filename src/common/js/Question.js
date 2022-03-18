@@ -162,6 +162,7 @@ class MulQuestion {
     let num2 = getRandomInt(Math.pow(10, M2EFFC), 100);
     this.m2 = Calc.div(num2, M2DIVIDEVALUE);
     this.m2 = Calc.div(this.m2, 100); // 百分数形式
+    if (this.m2 < 0.01) this.m2 = Calc.mul(this.m2, 10);
     if (this.m2 > 2) this.m2 = Calc.div(this.m2, 10); // 一般不会大于200%
     this.correctAnswer = Calc.mul(this.m1, this.m2);
     let ERRORMUL = Calc.add(Calc.div(getRandomInt(300, 100), 10000), 1);
